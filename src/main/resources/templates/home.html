@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <title>Home</title>
+    </head>
+    <body>
+        <h1>HOME</h1>
+        <ul>
+            <li th:each="project : ${projects}">
+                <span th:text="${project.name}"></span> - <span th:text="${project.description}"></span>
+            </li>
+        </ul>
+    </body>
+</html>
