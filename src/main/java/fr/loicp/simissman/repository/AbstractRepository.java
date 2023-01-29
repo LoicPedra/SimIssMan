@@ -22,7 +22,7 @@ public abstract class AbstractRepository<T extends UniqueEntity> implements Crud
     /**
      * The constant LOGGER.
      */
-    protected final static Logger LOGGER = LoggerFactory.getLogger(AbstractRepository.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(AbstractRepository.class);
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -227,5 +227,14 @@ public abstract class AbstractRepository<T extends UniqueEntity> implements Crud
             criteriaBuilder = this.getEntityManager().getCriteriaBuilder();
         }
         return criteriaBuilder;
+    }
+
+    /**
+     * Gets implementation class.
+     *
+     * @return the implementation class
+     */
+    protected final Class<T> getImplementationClass() {
+        return implementationClass;
     }
 }

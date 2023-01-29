@@ -4,8 +4,10 @@
         <meta charset="utf-8">
         <title>Home</title>
     </head>
-    <body>
+    <body th:with="person=${T(fr.loicp.simissman.context.PersonContext).getPerson()}">
         <h1>HOME</h1>
+        <h5 th:text="${person.username}" th:if="${person}"></h5>
+        <a href="/logout" th:if="${person}">Logout</a>
         <ul>
             <li th:each="project : ${projects}">
                 <span th:text="${project.name}"></span> - <span th:text="${project.description}"></span>

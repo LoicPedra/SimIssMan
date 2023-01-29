@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+    </head>
+    <body>
+        <h1>LOGIN</h1>
+
+        <ul th:if="${errors}">
+            <th:block th:each="error : ${errors}">
+                <li th:utext="${error}"></li>
+            </th:block>
+        </ul>
+
+        <form action="#" method="POST">
+            <div>
+                <label for="username">Enter your username: </label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div>
+                <label for="password">Enter your password: </label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div>
+                <input type="submit" value="Log In">
+            </div>
+        </form>
+    </body>
+</html>
